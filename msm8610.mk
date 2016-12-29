@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8610 \
     libshim_qcopt \
-    Snap
+    SnapdragonCamera
 
 # IPC router config
 PRODUCT_COPY_FILES += \

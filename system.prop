@@ -1,5 +1,6 @@
 # system.prop for msm8610
 
+# Model
 ro.product.model=otus
 
 # ART

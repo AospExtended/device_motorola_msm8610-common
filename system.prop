@@ -1,6 +1,7 @@
 # system.prop for msm8610
 
-ro.product.model=otus
+# Model
+ro.product.model=Moto E
 
 # ART
 dalvik.vm.dex2oat-flags=--no-watch-dog

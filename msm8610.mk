@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -71,6 +71,19 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay
 
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio_policy.msm8610 \
+    audio.primary.msm8610 \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudio-resampler \
+    tinymix \
+    libqcomvisualizer \
+    libqcomvoiceprocessing
+
 # Audio Configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -86,10 +99,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8610 \
     memtrack.msm8610 \
     power.msm8610
-
-PRODUCT_PACKAGES += \
-    audio.msm8610 \
-    audio_policy.msm8610
 
 # Browser
 PRODUCT_PACKAGES += \
@@ -107,17 +116,6 @@ PRODUCT_COPY_FILES += \
 
 # Keystore
 PRODUCT_PACKAGES += keystore.msm8610
-
-PRODUCT_PACKAGES += \
-    audiod \
-    audio.primary.msm8610 \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
-    libaudio-resampler \
-    tinymix \
-    libqcomvisualizer \
-    libqcomvoiceprocessing
 
 # Media Config
 PRODUCT_COPY_FILES += \
